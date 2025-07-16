@@ -9,6 +9,10 @@ class SweetShop {
     }
     this.sweets.push(sweet);
   }
+
+    deleteSweet(id) {
+    this.sweets = this.sweets.filter(s => s.id !== id);
+  }
 }
 
 module.exports = SweetShop ;

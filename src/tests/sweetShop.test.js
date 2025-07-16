@@ -43,6 +43,15 @@ describe("SweetShop class", () => {
     expect(sweet.quantity).toBe(15);
   });
 
+  test('should throw error if not enough stock', () => {
+    const sweet = new Sweet(1001, 'Kaju Katli', 'Nut-Based', 50, 2);
+    shop.addSweet(sweet);
+
+    expect(() => {
+      shop.purchaseSweet(1001, 5);
+    }).toThrow('Not enough stock.');
+  });
+
    test('should restock a sweet', () => {
     const sweet = new Sweet(1001, 'Kaju Katli', 'Nut-Based', 50, 10);
     shop.addSweet(sweet);

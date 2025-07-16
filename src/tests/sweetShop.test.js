@@ -23,5 +23,13 @@ describe("SweetShop class", () => {
     expect(shop.viewSweets()).not.toContainEqual(sweet);
   });
 
+    test('should purchase a sweet and reduce stock', () => {
+    const sweet = new Sweet(1001, 'Kaju Katli', 'Nut-Based', 50, 20);
+    shop.addSweet(sweet);
+
+    shop.purchaseSweet(1001, 5);
+
+    expect(sweet.quantity).toBe(15);
+  });
 
 });

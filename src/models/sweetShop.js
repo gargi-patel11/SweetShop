@@ -30,6 +30,19 @@ class SweetShop {
     if (!sweet) throw new Error('Sweet not found.');
     sweet.quantity += quantity;
   }
+
+   searchSweets({ name, category, minPrice, maxPrice }) {
+    return this.sweets.filter(s => {
+      let matches = true;
+      if (name) matches = matches && s.name.includes(name);
+      if (category) matches = matches && s.category === category;
+      if (minPrice !== undefined) matches = matches && s.price >= minPrice;
+      if (maxPrice !== undefined) matches = matches && s.price <= maxPrice;
+      return matches;
+    });
+  }
 }
+
+ 
 
 module.exports = SweetShop ;

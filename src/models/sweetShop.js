@@ -17,6 +17,13 @@ class SweetShop {
     viewSweets() {
     return this.sweets;
   }
+
+  purchaseSweet(id, quantity) {
+    const sweet = this.sweets.find(s => s.id === id);
+    if (!sweet) throw new Error('Sweet not found.');
+    if (sweet.quantity < quantity) throw new Error('Not enough stock.');
+    sweet.quantity -= quantity;
+  }
 }
 
 module.exports = SweetShop ;

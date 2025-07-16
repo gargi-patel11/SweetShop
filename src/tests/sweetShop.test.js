@@ -1,9 +1,9 @@
 const Sweet = require("../models/Sweet") ;
-const Shop = require("../models/sweetShop") ; 
+const SweetShop = require("../models/sweetShop") ; 
 
 describe("SweetShop class" , ()=>{
     let shop  ; 
-    shop = new Shop() ; 
+    shop = new SweetShop() ; 
 
     test('should add a Sweet ', () => {
         const sweet = new Sweet(1001, 'Kaju Katli', 'Nut-Based', 50, 20);

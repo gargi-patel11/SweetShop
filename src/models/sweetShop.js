@@ -13,6 +13,10 @@ class SweetShop {
     deleteSweet(id) {
     this.sweets = this.sweets.filter(s => s.id !== id);
   }
+
+    viewSweets() {
+    return this.sweets;
+  }
 }
 
 module.exports = SweetShop ;

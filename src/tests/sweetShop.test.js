@@ -11,7 +11,7 @@ describe("SweetShop class", () => {
     const sweet = new Sweet(1001, "Kaju Katli", "Nut-Based", 50, 20);
     shop.addSweet(sweet);
 
-    // expect(shop.viewSweets()).toContainEqual(sweet);
+    expect(shop.viewSweets()).toContainEqual(sweet);
   });
 
   test("should delete a sweet by ID", () => {
@@ -20,7 +20,7 @@ describe("SweetShop class", () => {
 
     shop.deleteSweet(1001);
 
-    // expect(shop.viewSweets()).not.toContainEqual(sweet);
+    expect(shop.viewSweets()).not.toContainEqual(sweet);
   });
 
 

@@ -61,4 +61,16 @@ describe("SweetShop class", () => {
     expect(sweet.quantity).toBe(15);
   });
 
+  test('should search sweets by name', () => {
+    const sweet1 = new Sweet(1001, 'Kaju Katli', 'Nut-Based', 50, 20);
+    const sweet2 = new Sweet(1002, 'Gulab Jamun', 'Milk-Based', 10, 50);
+
+    shop.addSweet(sweet1);
+    shop.addSweet(sweet2);
+
+    const result = shop.searchSweets({ name: 'Kaju' });
+    expect(result).toContainEqual(sweet1);
+    expect(result).not.toContainEqual(sweet2);
+  });
+
 });

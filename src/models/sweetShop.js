@@ -24,6 +24,12 @@ class SweetShop {
     if (sweet.quantity < quantity) throw new Error('Not enough stock.');
     sweet.quantity -= quantity;
   }
+
+  restockSweet(id, quantity) {
+    const sweet = this.sweets.find(s => s.id === id);
+    if (!sweet) throw new Error('Sweet not found.');
+    sweet.quantity += quantity;
+  }
 }
 
 module.exports = SweetShop ;

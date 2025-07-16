@@ -32,4 +32,13 @@ describe("SweetShop class", () => {
     expect(sweet.quantity).toBe(15);
   });
 
+   test('should restock a sweet', () => {
+    const sweet = new Sweet(1001, 'Kaju Katli', 'Nut-Based', 50, 10);
+    shop.addSweet(sweet);
+
+    shop.restockSweet(1001, 5);
+
+    expect(sweet.quantity).toBe(15);
+  });
+
 });

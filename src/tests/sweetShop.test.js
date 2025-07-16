@@ -14,6 +14,17 @@ describe("SweetShop class", () => {
     expect(shop.viewSweets()).toContainEqual(sweet);
   });
 
+    test('should throw error when adding sweet with duplicate ID', () => {
+    const sweet1 = new Sweet(1001, 'Kaju Katli', 'Nut-Based', 50, 20);
+    const sweet2 = new Sweet(1001, 'Gulab Jamun', 'Milk-Based', 10, 50);
+
+    shop.addSweet(sweet1);
+
+    expect(() => {
+      shop.addSweet(sweet2);
+    }).toThrow('Sweet with this ID already exists.');
+  });
+
   test("should delete a sweet by ID", () => {
     const sweet = new Sweet(1001, "Kaju Katli", "Nut-Based", 50, 20);
     shop.addSweet(sweet);
